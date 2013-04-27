@@ -24,12 +24,12 @@ object,object:focus { outline: none; }
   margin: 0 auto;
 }
 
-#entries {
+.main {
   float: left;
   width: 750px;
 }
 
-#widgets {
+.sub {
   float: left;
   margin-left: 30px;
   width: 180px;
@@ -55,13 +55,10 @@ a {
   width: 180px;
 }
 
-#footer .widget.widget-ad {
-  float: right;
-  text-align: center;
+#footer .main {
+  padding-top: 160px;
 }
 
-#footer .content {
-  float: left;
-  width: 750px;
-  padding-top: 160px;
+#footer .sub {
+  text-align: center;
 }
