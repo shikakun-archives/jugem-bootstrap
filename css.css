@@ -67,6 +67,10 @@ a {
   margin-bottom: 30px;
 }
 
+.entry p {
+  margin-bottom: 0.5em;
+}
+
 .widget {
   width: 180px;
   margin-bottom: 30px;
