@@ -26,8 +26,7 @@ object,object:focus { outline: none; }
 
 .main {
   float: left;
-  width: 540px;
-  padding-left: 210px;
+  width: 750px;
 }
 
 .sub {
@@ -40,7 +39,9 @@ object,object:focus { outline: none; }
 /* details */
 
 body {
+  color: #2b2b2b;
   font-size: 90%;
+  line-height: 1.6;
 }
 
 a {
@@ -52,12 +53,20 @@ a {
   color: #2b2b2b;
 }
 
+#header {
+  padding: 90px 0;
+}
+
+.entry {
+  margin-bottom: 30px;
+}
+
 .widget {
   width: 180px;
 }
 
 #footer .main {
-  padding-top: 160px;
+  padding-top: 120px;
 }
 
 #footer .sub {
