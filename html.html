@@ -22,39 +22,66 @@
     {gmo_header_src}
     
     <!-- BEGIN title -->
-      <h1>{blog_name}</h1>
-      <p>{blog_description}</p>
+      <header id="header">
+        <h1 class="title">
+          {blog_name}
+        </h1>
+        <p>{blog_description}</p>
+      </header>
     <!-- END title -->
     
     <!-- BEGIN sequel -->
-      {prev_entry} | <a href="./">main</a> | {next_entry} 
+      <ul class="sequel">
+        <li>
+          {prev_entry}
+        </li>
+        <li>
+          <a href="./">ブログトップ</a>
+        </li>
+        <li>
+          {next_entry}
+        </li>
+      </ul> 
     <!-- END sequel -->
+    
     <!-- BEGIN entry -->
-      <h2>{entry_title}</h2>
-      {love}
-      {entry_date}
-      {category_name}
-      {entry_time}
-      {comment_num}
-      {trackback_num}
-      {logpi_link}
-      {user_name}
-      
-      {entry_description}
-      <a name="sequel"></a>
-      {entry_sequel}
-      {trackback_auto_discovery}
+      <section class="entry">
+        <h2 class="title">
+          {entry_title}
+        </h2>
+        <div class="entry_description">
+          {entry_description}
+        </div>
+        
+        <div class="entry_metadata">
+          {love}
+          {entry_date}
+          {category_name}
+          {entry_time}
+          {comment_num}
+          {trackback_num}
+          {logpi_link}
+          {user_name}
+        </div>
+        
+        <a name="sequel"></a>
+        {entry_sequel}
+        {trackback_auto_discovery}
+      </section>
     <!-- END entry -->
     
     <!-- BEGIN comment_area -->
       <section id="comments">
+        <h3>コメント</h3>
         <!-- BEGIN comment -->
-          {comment_description}
-          {comment_name}
-          {comment_time}
+          <div class="comment">
+            {comment_description}
+            {comment_name}
+            {comment_time}
+          </div>
         <!-- END comment -->
         
-        <form name="comment_area" action="./?mode=comment" method="post">
+        <form id="comment_form" name="comment_area" action="./?mode=comment" method="post">
           <input name="name" type="text" value="{cookie_name}" tabindex="1">
           <input name="email" type="text" value="{cookie_email}" tabindex="2">
           <input name="url" type="text" value="{cookie_url}" tabindex="3">
@@ -67,93 +94,164 @@
     <!-- END comment_area -->
     
     <!-- BEGIN trackback_area -->
-      <section id="trackback">
-        <input type="text" value="{trackback_url}">
+      <section id="trackbacks">
+        <h3>トラックバック</h3>
         <!-- BEGIN trackback -->
-          {trackback_title}
-          {trackback_excerpt}
-          {trackback_blog_name}
-          {trackback_time}
+          <section class="trackback">
+            {trackback_title}
+            {trackback_excerpt}
+            {trackback_blog_name}
+            {trackback_time}
+          </section>
         <!-- END trackback -->
+        <h4>トラックバック URL</h4>
+        <input type="text" value="{trackback_url}">
       </section>
     <!-- END trackback_area -->
     
     <!-- BEGIN profile_area -->
-      {profile_name}
-      {profile_description}
+      <section class="entry">
+        <h2 class="title">
+          {profile_name}ja
+        </h2>
+        <div>
+          {profile_description}
+        </div>
+      </section>
     <!-- END profile_area -->
     
     <!-- BEGIN calendar -->
-      {calendar}
+      <div class="widget widget-calendar">
+        {calendar}
+      </div>
     <!-- END calendar -->
     
     <!-- BEGIN jugem_ad -->
-      {ad}
+      <div class="widget widget-ad">
+        {ad}
+      </div>
     <!-- END jugem_ad -->
     
     <!-- BEGIN freespace1 -->
-      {freespace_title1}
-      {freespace_contents1}
+      <section class="widget widget-freespace">
+        <h2 class="title">
+          {freespace_title1}
+        </h2>
+        {freespace_contents1}
+      </section>
     <!-- END freespace1 -->
     
     <!-- BEGIN freespace2 -->
-      {freespace_title2}
-      {freespace_contents2}
+      <section class="widget widget-freespace">
+        <h2 class="title">
+          {freespace_title2}
+        </h2>
+        {freespace_contents2}
+      </section>
     <!-- END freespace2 -->
     
     <!-- BEGIN freespace3 -->
-      {freespace_title3}
-      {freespace_contents3}
+      <section class="widget widget-freespace">
+        <h2 class="title">
+          {freespace_title3}
+        </h2>
+        {freespace_contents3}
+      </section>
     <!-- END freespace3 -->
     
     <!-- BEGIN freespace4 -->
-      {freespace_title4}
-      {freespace_contents4}
+      <section class="widget widget-freespace">
+        <h2 class="title">
+          {freespace_title4}
+        </h2>
+        {freespace_contents4}
+      </section>
     <!-- END freespace4 -->
     
     <!-- BEGIN freespace5 -->
-      {freespace_title5}
-      {freespace_contents5}
+      <section class="widget widget-freespace">
+        <h2 class="title">
+          {freespace_title5}
+        </h2>
+        {freespace_contents5}
+      </section>
     <!-- END freespace5 -->
     
     <!-- BEGIN selected_entry -->	
-      {selected_entry_list}
+      <section class="widget widget-selected-entry">
+        <h2 class="title">
+          Selected entry
+        </h2>
+        {selected_entry_list}
+      </section>
     <!-- END selected_entry -->
     
     <!-- BEGIN category -->
-      {category_list}
+      <section class="widget widget-category">
+        <h2 class="title">
+          Category
+        </h2>
+        {category_list}
+      </section>
     <!-- END category -->
     
     <!-- BEGIN archives -->
-      {archives_list}
+      <section class="widget widget-archives">
+        <h2 class="title">
+          Archives
+        </h2>
+        {archives_list}
+      </section>
     <!-- END archives -->
     
     <!-- BEGIN recent_comment -->
-      {recent_comment_list}
+      <section class="widget widget-recent-comment">
+        <h2 class="title">
+          Recent comments
+        </h2>
+        {recent_comment_list}
+      </section>
     <!-- END recent_comment -->
     
     <!-- BEGIN recent_trackback -->
-      {recent_trackback_list}
+      <section class="widget widget-recent-trackback">
+        <h2 class="title">
+          Recent trackback
+        </h2>
+        {recent_trackback_list}
+      </section>
     <!-- END recent_trackback -->
     
     <!-- BEGIN amazon -->
-      {amazon_item}
+      <div class="widget widget-amazon">
+        {amazon_item}
+      </div>
     <!-- END amazon -->
     
     <!-- BEGIN link -->
-      {link_list}
+      <section class="widget widget-link">
+        <h2 class="title">
+          Link
+        </h2>
+        {link_list}
+      </section>
     <!-- END link -->
     
     <!-- BEGIN profile -->
-      {user_list}
+      <section class="widget widget-profile">
+        <h2 class="title">
+          Author
+        </h2>
+        {user_list}
+      </section>
     <!-- END profile -->
     
-    <form method="get" action="./">
+    <form class="widget widget-search" method="get" action="./">
       <input name="search">
       <input type="submit" value="検索">
     </form>
     
-    <ul>
+    <ul class="widget">
       <li>
         <a href="./manage/">管理者ページ</a>
       </li>
@@ -169,9 +267,18 @@
     {powered}
     
     <!-- BEGIN page -->
-  	  {prev_page_link} | {page_now}/{page_num}PAGES | {next_page_link}
+  	  <ul class="page">
+  	    <li>
+  	      {prev_page_link}
+        </li>
+  	    <li>
+  	      {page_now}/{page_num}
+  	    </li>
+  	    <li>
+  	      {next_page_link}
+  	    </li>
+  	  </ul>
     <!-- END page -->
-    
   	{copyright}
   </body>
 </html>
