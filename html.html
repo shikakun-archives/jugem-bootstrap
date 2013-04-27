@@ -20,7 +20,7 @@
   </head>
   <body id="{eid}{page}{cid}{month}{day}{search}{pid}{index}" onload="javascript:initval();">
     {gmo_header_src}
-  
+    
     <!-- BEGIN title -->
       <h1>{blog_name}</h1>
       <p>{blog_description}</p>
@@ -47,33 +47,35 @@
     <!-- END entry -->
     
     <!-- BEGIN comment_area -->
-      <a name="comments" id="comments"></a>
-      <!-- BEGIN comment -->
-        {comment_description}
-        {comment_name}
-        {comment_time}
-      <!-- END comment -->
-      
-      <form name="comment_area" id="comment_area" action="./?mode=comment" method="post">
-        <input type="hidden" name="entry_id" value="{entry_id}" class="input">
-        <input type="text" tabindex="1" name="name" id="name" value="{cookie_name}" class="input">
-        <input type="text" tabindex="2" name="email" id="email" value="{cookie_email}" class="input">
-        <input type="text" tabindex="3" name="url" id="url" value="{cookie_url}" class="input">
-        <textarea tabindex="4" id="description" name="description" rows="5"></textarea>
-        <input tabindex="5" type="submit" value="コメント送信" onclick="javascript:setval();">
-        <input type="checkbox" name="set_cookie" value="1" id="set_cookie"><label for="set_cookie">入力情報を登録しますか？</label>
-      </form>
+      <section id="comments">
+        <!-- BEGIN comment -->
+          {comment_description}
+          {comment_name}
+          {comment_time}
+        <!-- END comment -->
+        
+        <form name="comment_area" action="./?mode=comment" method="post">
+          <input name="name" type="text" value="{cookie_name}" tabindex="1">
+          <input name="email" type="text" value="{cookie_email}" tabindex="2">
+          <input name="url" type="text" value="{cookie_url}" tabindex="3">
+          <textarea name="description" rows="5" tabindex="4"></textarea>
+          <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
+          <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">名前など入力情報を保存する</label>
+          <input name="entry_id" type="hidden" value="{entry_id}">
+        </form>
+      </section>
     <!-- END comment_area -->
     
     <!-- BEGIN trackback_area -->
-      <a name="trackback" id="trackback"></a>
-      <input type="text" value="{trackback_url}" class="input">
-      <!-- BEGIN trackback -->
-        {trackback_title}
-        {trackback_excerpt}
-        {trackback_blog_name}
-        {trackback_time}
-      <!-- END trackback -->
+      <section id="trackback">
+        <input type="text" value="{trackback_url}">
+        <!-- BEGIN trackback -->
+          {trackback_title}
+          {trackback_excerpt}
+          {trackback_blog_name}
+          {trackback_time}
+        <!-- END trackback -->
+      </section>
     <!-- END trackback_area -->
     
     <!-- BEGIN profile_area -->
@@ -147,7 +149,7 @@
     <!-- END profile -->
     
     <form method="get" action="./">
-      <input id="search" name="search">
+      <input name="search">
       <input type="submit" value="検索">
     </form>
     
