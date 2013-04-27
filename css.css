@@ -16,6 +16,10 @@ object,object:focus { outline: none; }
 
 /* layout */
 
+.wrapper {
+  padding: 80px;
+}
+
 
 /* details */
 

@@ -20,291 +20,296 @@
   </head>
   <body id="{eid}{page}{cid}{month}{day}{search}{pid}{index}" onload="javascript:initval();">
     {gmo_header_src}
-    <header id="header">
+    <header id="header" class="wrapper">
+      <div class="inner">
+        
+        <!-- BEGIN title -->
+          <h1 class="title">
+            {blog_name}
+          </h1>
+          <p>{blog_description}</p>
+        <!-- END title -->
       
-      <!-- BEGIN title -->
-        <h1 class="title">
-          {blog_name}
-        </h1>
-        <p>{blog_description}</p>
-      <!-- END title -->
-      
+      </div>
     </header>
-    <div id="contents">
-      
-      <!-- BEGIN sequel -->
-        <ul class="sequel">
-          <li>
-            {prev_entry}
-          </li>
-          <li>
-            <a href="./">ブログトップ</a>
-          </li>
-          <li>
-            {next_entry}
-          </li>
-        </ul> 
-      <!-- END sequel -->
-      
-      <!-- BEGIN entry -->
-        <article class="entry">
-          <h2 class="title">
-            {entry_title}
-          </h2>
-          <div class="description">
-            {entry_description}
-            <a name="sequel"></a>
-            {entry_sequel}
-          </div>
-          <div class="metadata">
-            {entry_date}
-            {entry_time}
-            {comment_num}
-            {trackback_num}
-            {category_name}
-            {user_name}
-            {logpi_link}
-            {love}
-          </div>
-          {trackback_auto_discovery}
-        </article>
-      <!-- END entry -->
-      
-      <!-- BEGIN comment_area -->
-        <section id="comments">
-          <h3 class="title">
-            Comment
-          </h3>
+    <div id="contents" class="wrapper">
+      <div class="inner">
+        <div id="entries">
           
-          <!-- BEGIN comment -->
-            <div class="comment">
-              {comment_description}
-              {comment_name}
-              {comment_time}
-            </div>
-          <!-- END comment -->
+          <!-- BEGIN sequel -->
+            <ul class="sequel">
+              <li>
+                {prev_entry}
+              </li>
+              <li>
+                <a href="./">ブログトップ</a>
+              </li>
+              <li>
+                {next_entry}
+              </li>
+            </ul> 
+          <!-- END sequel -->
           
-          <form class="form" name="comment_area" action="./?mode=comment" method="post">
-            <input name="name" type="text" value="{cookie_name}" tabindex="1">
-            <input name="email" type="text" value="{cookie_email}" tabindex="2">
-            <input name="url" type="text" value="{cookie_url}" tabindex="3">
-            <textarea name="description" rows="5" tabindex="4"></textarea>
-            <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
-            <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">Save</label>
-            <input name="entry_id" type="hidden" value="{entry_id}">
-          </form>
-        </section>
-      <!-- END comment_area -->
-      
-      <!-- BEGIN trackback_area -->
-        <section id="trackbacks">
-          <h3 class="title">
-            Trackback
-          </h3>
-          
-          <!-- BEGIN trackback -->
-            <section class="trackback">
-              <h4 class="title">
-                {trackback_title}
-              </h4>
-              <div class="excerpt">
-                {trackback_excerpt}
+          <!-- BEGIN entry -->
+            <article class="entry">
+              <h2 class="title">
+                {entry_title_link}
+              </h2>
+              <div class="description">
+                {entry_description}
+                <a name="sequel"></a>
+                {entry_sequel}
               </div>
               <div class="metadata">
-                <p class="blog-name">{trackback_blog_name}</p>
-                <time class="time">{trackback_time}</time>
+                {entry_date}
+                {entry_time}
+                {comment_num}
+                {trackback_num}
+                {category_name}
+                {user_name}
+                {logpi_link}
+                {love}
+              </div>
+              {trackback_auto_discovery}
+            </article>
+          <!-- END entry -->
+          
+          <!-- BEGIN comment_area -->
+            <section id="comments">
+              <h3 class="title">
+                Comment
+              </h3>
+              
+              <!-- BEGIN comment -->
+                <div class="comment">
+                  {comment_description}
+                  {comment_name}
+                  {comment_time}
+                </div>
+              <!-- END comment -->
+              
+              <form class="form" name="comment_area" action="./?mode=comment" method="post">
+                <input name="name" type="text" value="{cookie_name}" tabindex="1">
+                <input name="email" type="text" value="{cookie_email}" tabindex="2">
+                <input name="url" type="text" value="{cookie_url}" tabindex="3">
+                <textarea name="description" rows="5" tabindex="4"></textarea>
+                <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
+                <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">Save</label>
+                <input name="entry_id" type="hidden" value="{entry_id}">
+              </form>
+            </section>
+          <!-- END comment_area -->
+          
+          <!-- BEGIN trackback_area -->
+            <section id="trackbacks">
+              <h3 class="title">
+                Trackback
+              </h3>
+              
+              <!-- BEGIN trackback -->
+                <section class="trackback">
+                  <h4 class="title">
+                    {trackback_title}
+                  </h4>
+                  <div class="excerpt">
+                    {trackback_excerpt}
+                  </div>
+                  <div class="metadata">
+                    <p class="blog-name">{trackback_blog_name}</p>
+                    <time class="time">{trackback_time}</time>
+                  </div>
+                </section>
+              <!-- END trackback -->
+              
+              <h4 class="title">
+                Trackback URL
+              </h4>
+              <input type="text" value="{trackback_url}">
+            </section>
+          <!-- END trackback_area -->
+          
+          <!-- BEGIN profile_area -->
+            <section class="entry">
+              <h2 class="title">
+                {profile_name}ja
+              </h2>
+              <div class="description">
+                {profile_description}
               </div>
             </section>
-          <!-- END trackback -->
+          <!-- END profile_area -->
           
-          <h4 class="title">
-            Trackback URL
-          </h4>
-          <input type="text" value="{trackback_url}">
-        </section>
-      <!-- END trackback_area -->
-      
-      <!-- BEGIN profile_area -->
-        <section class="entry">
-          <h2 class="title">
-            {profile_name}ja
-          </h2>
-          <div class="description">
-            {profile_description}
+          <!-- BEGIN page -->
+        	  <ul class="page">
+        	    <li>
+        	      {prev_page_link}
+              </li>
+        	    <li>
+        	      {page_now}/{page_num}
+        	    </li>
+        	    <li>
+        	      {next_page_link}
+        	    </li>
+        	  </ul>
+          <!-- END page -->
+          
+        </div>
+        <div id="widgets" class="wrapper">
+          
+          <!-- BEGIN calendar -->
+            <div class="widget widget-calendar">
+              {calendar}
+            </div>
+          <!-- END calendar -->
+          
+          <!-- BEGIN jugem_ad -->
+            <div class="widget widget-ad">
+              {ad}
+            </div>
+          <!-- END jugem_ad -->
+          
+          <!-- BEGIN freespace1 -->
+            <section class="widget widget-freespace">
+              <h2 class="title">
+                {freespace_title1}
+              </h2>
+              {freespace_contents1}
+            </section>
+          <!-- END freespace1 -->
+          
+          <!-- BEGIN freespace2 -->
+            <section class="widget widget-freespace">
+              <h2 class="title">
+                {freespace_title2}
+              </h2>
+              {freespace_contents2}
+            </section>
+          <!-- END freespace2 -->
+          
+          <!-- BEGIN freespace3 -->
+            <section class="widget widget-freespace">
+              <h2 class="title">
+                {freespace_title3}
+              </h2>
+              {freespace_contents3}
+            </section>
+          <!-- END freespace3 -->
+          
+          <!-- BEGIN freespace4 -->
+            <section class="widget widget-freespace">
+              <h2 class="title">
+                {freespace_title4}
+              </h2>
+              {freespace_contents4}
+            </section>
+          <!-- END freespace4 -->
+          
+          <!-- BEGIN freespace5 -->
+            <section class="widget widget-freespace">
+              <h2 class="title">
+                {freespace_title5}
+              </h2>
+              {freespace_contents5}
+            </section>
+          <!-- END freespace5 -->
+          
+          <!-- BEGIN selected_entry -->	
+            <section class="widget widget-selected-entry">
+              <h2 class="title">
+                Selected entry
+              </h2>
+              {selected_entry_list}
+            </section>
+          <!-- END selected_entry -->
+          
+          <!-- BEGIN category -->
+            <section class="widget widget-category">
+              <h2 class="title">
+                Category
+              </h2>
+              {category_list}
+            </section>
+          <!-- END category -->
+          
+          <!-- BEGIN archives -->
+            <section class="widget widget-archives">
+              <h2 class="title">
+                Archives
+              </h2>
+              {archives_list}
+            </section>
+          <!-- END archives -->
+          
+          <!-- BEGIN recent_comment -->
+            <section class="widget widget-recent-comment">
+              <h2 class="title">
+                Recent comments
+              </h2>
+              {recent_comment_list}
+            </section>
+          <!-- END recent_comment -->
+          
+          <!-- BEGIN recent_trackback -->
+            <section class="widget widget-recent-trackback">
+              <h2 class="title">
+                Recent trackback
+              </h2>
+              {recent_trackback_list}
+            </section>
+          <!-- END recent_trackback -->
+          
+          <!-- BEGIN amazon -->
+            <div class="widget widget-amazon">
+              {amazon_item}
+            </div>
+          <!-- END amazon -->
+          
+          <!-- BEGIN link -->
+            <section class="widget widget-link">
+              <h2 class="title">
+                Link
+              </h2>
+              {link_list}
+            </section>
+          <!-- END link -->
+          
+          <!-- BEGIN profile -->
+            <section class="widget widget-profile">
+              <h2 class="title">
+                Author
+              </h2>
+              {user_list}
+            </section>
+          <!-- END profile -->
+          
+          <form class="widget widget-search" method="get" action="./">
+            <input name="search">
+            <input type="submit" value="検索">
+          </form>
+          <div class="widget widget-site-qrcode">
+            {site_qrcode}
           </div>
-        </section>
-      <!-- END profile_area -->
-      
-      <!-- BEGIN page -->
-    	  <ul class="page">
-    	    <li>
-    	      {prev_page_link}
+          <div class="widget widget-powered">
+            {powered}
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer id="footer" class="wrapper">
+      <div class="inner">
+        <ul class="link">
+          <li>
+            <a href="./manage/">管理者ページ</a>
           </li>
-    	    <li>
-    	      {page_now}/{page_num}
-    	    </li>
-    	    <li>
-    	      {next_page_link}
-    	    </li>
-    	  </ul>
-      <!-- END page -->
-      
-    </div>
-    <div id="widgets">
-      
-      <!-- BEGIN calendar -->
-        <div class="widget widget-calendar">
-          {calendar}
-        </div>
-      <!-- END calendar -->
-      
-      <!-- BEGIN jugem_ad -->
-        <div class="widget widget-ad">
-          {ad}
-        </div>
-      <!-- END jugem_ad -->
-      
-      <!-- BEGIN freespace1 -->
-        <section class="widget widget-freespace">
-          <h2 class="title">
-            {freespace_title1}
-          </h2>
-          {freespace_contents1}
-        </section>
-      <!-- END freespace1 -->
-      
-      <!-- BEGIN freespace2 -->
-        <section class="widget widget-freespace">
-          <h2 class="title">
-            {freespace_title2}
-          </h2>
-          {freespace_contents2}
-        </section>
-      <!-- END freespace2 -->
-      
-      <!-- BEGIN freespace3 -->
-        <section class="widget widget-freespace">
-          <h2 class="title">
-            {freespace_title3}
-          </h2>
-          {freespace_contents3}
-        </section>
-      <!-- END freespace3 -->
-      
-      <!-- BEGIN freespace4 -->
-        <section class="widget widget-freespace">
-          <h2 class="title">
-            {freespace_title4}
-          </h2>
-          {freespace_contents4}
-        </section>
-      <!-- END freespace4 -->
-      
-      <!-- BEGIN freespace5 -->
-        <section class="widget widget-freespace">
-          <h2 class="title">
-            {freespace_title5}
-          </h2>
-          {freespace_contents5}
-        </section>
-      <!-- END freespace5 -->
-      
-      <!-- BEGIN selected_entry -->	
-        <section class="widget widget-selected-entry">
-          <h2 class="title">
-            Selected entry
-          </h2>
-          {selected_entry_list}
-        </section>
-      <!-- END selected_entry -->
-      
-      <!-- BEGIN category -->
-        <section class="widget widget-category">
-          <h2 class="title">
-            Category
-          </h2>
-          {category_list}
-        </section>
-      <!-- END category -->
-      
-      <!-- BEGIN archives -->
-        <section class="widget widget-archives">
-          <h2 class="title">
-            Archives
-          </h2>
-          {archives_list}
-        </section>
-      <!-- END archives -->
-      
-      <!-- BEGIN recent_comment -->
-        <section class="widget widget-recent-comment">
-          <h2 class="title">
-            Recent comments
-          </h2>
-          {recent_comment_list}
-        </section>
-      <!-- END recent_comment -->
-      
-      <!-- BEGIN recent_trackback -->
-        <section class="widget widget-recent-trackback">
-          <h2 class="title">
-            Recent trackback
-          </h2>
-          {recent_trackback_list}
-        </section>
-      <!-- END recent_trackback -->
-      
-      <!-- BEGIN amazon -->
-        <div class="widget widget-amazon">
-          {amazon_item}
-        </div>
-      <!-- END amazon -->
-      
-      <!-- BEGIN link -->
-        <section class="widget widget-link">
-          <h2 class="title">
-            Link
-          </h2>
-          {link_list}
-        </section>
-      <!-- END link -->
-      
-      <!-- BEGIN profile -->
-        <section class="widget widget-profile">
-          <h2 class="title">
-            Author
-          </h2>
-          {user_list}
-        </section>
-      <!-- END profile -->
-      
-      <form class="widget widget-search" method="get" action="./">
-        <input name="search">
-        <input type="submit" value="検索">
-      </form>
-      
-      <div class="widget widget-site-qrcode">
-        {site_qrcode}
+          <li>
+            <a href="./?mode=rss">RSS1.0</a>
+          </li>
+          <li>
+            <a href="./?mode=atom">Atom0.3</a>
+          </li>
+        </ul>
+        <p id="copyright">{copyright}</p>
       </div>
-      
-      <div class="widget widget-powered">
-        {powered}
-      </div>
-    
-    </div>
-    <footer id="footer">
-      <ul class="link">
-        <li>
-          <a href="./manage/">管理者ページ</a>
-        </li>
-        <li>
-          <a href="./?mode=rss">RSS1.0</a>
-        </li>
-        <li>
-          <a href="./?mode=atom">Atom0.3</a>
-        </li>
-      </ul>
-      <p id="copyright">{copyright}</p>
     </footer>
   </body>
 </html>
