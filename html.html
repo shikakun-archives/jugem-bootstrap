@@ -19,369 +19,158 @@
     <script type="text/javascript" src="http://imaging.jugem.jp/template/js/cookie.js"></script>
   </head>
   <body id="{eid}{page}{cid}{month}{day}{search}{pid}{index}" onload="javascript:initval();">
-
-
-
-<!-- wrapper -->
-<div id="wrapper_body">
-<div id="wrapper">
-
-<a name="top" id="top"></a>
-
-	<!-- header -->
-	<div id="header">
-		<!-- BEGIN title -->
-		<h1>{blog_name}</h1>
-		<p>{blog_description}</p>
-		<!-- END title -->
-	</div>
-	<!-- /header/ -->
-
-<!-- content -->
-<div id="content">
-
-	<!-- main -->
-	<div id="main">
-
-		<!-- BEGIN sequel -->
-		<div class="entry_navi">
-		{prev_entry} | <a href="./">main</a> | {next_entry} 
-		</div>
-		<!-- END sequel -->
-
-		<!-- BEGIN entry -->
-		<div class="entry_area">
-			<h2>{entry_title}</h2>
-			{love}
-			<ul class="state">
-			<li>{entry_date}</li>
-			<li>{category_name}</li>
-			<li>{entry_time}</li>
-			<li>{comment_num}</li>
-			<li>{trackback_num}</li>
-			<li>{logpi_link}</li>
-			<li>by {user_name}</li>
-			</ul>
-
-			<div class="entry">{entry_description}</div>
-			<a name="sequel"></a>
-			<div class="entry">{entry_sequel}</div>
-			<br class="clear" />
-			
-			{trackback_auto_discovery}
-		</div>
-		<!-- END entry -->
-
-		<!-- BEGIN comment_area -->
-		<a name="comments" id="comments"></a>
-		<div class="entry_area">
-			<dl id="com_area">
-			<dt class="title">コメント</dt>
-			<!-- BEGIN comment -->
-			<dt class="com_desc">{comment_description}</dt>
-			<dd>
-				<ul>
-				<li>{comment_name}</li>
-				<li>{comment_time}</li>
-				</ul>
-			</dd>
-			<!-- END comment -->
-			</dl>
-		</div>
-		
-		<div class="entry_area">
-			<dl id="com_form">
-			<dt class="title">コメントする</dt>
-			<dd>
-			<form name="comment_area" id="comment_area" action="./?mode=comment" method="post">
-			<input type="hidden" name="entry_id" value="{entry_id}" class="input" />
-			
-			<label for="name">name:</label><br/>
-			<input type="text" tabindex="1" name="name" id="name" value="{cookie_name}" class="input" /><br />
-			
-			<label for="email">email:</label><br>
-			<input type="text" tabindex="2" name="email" id="email" value="{cookie_email}" class="input" /><br />
-			
-			<label for="url">url:</label><br>
-			<input type="text" tabindex="3" name="url" id="url" value="{cookie_url}" class="input" /><br />
-			
-			<label for="description">comments:</label><br />
-			<textarea tabindex="4" id="description" name="description" rows="5"></textarea><br />
-			
-			<input tabindex="5" type="image" src="http://imaging.jugem.jp/template/piano/img/submit.gif" value="コメント送信" onclick="javascript:setval();" /><br />
-			<input type="checkbox" name="set_cookie" value="1" id="set_cookie"><label for="set_cookie">入力情報を登録しますか？</label>
-			
-			
-			
-			</form>
-			</dd>
-			</dl>
-		</div>
-		<!-- END comment_area -->
-
-
-		<!-- BEGIN trackback_area -->
-		<a name="trackback" id="trackback"></a>
-		<div class="entry_area">
-			<dl id="tb_form">
-			<dt class="title">この記事のトラックバックURL</dt>
-			<dd><input type="text" value="{trackback_url}" class="input" /></dd>
-			</dl>
-		</div>
-
-		<div class="entry_area">
-			<dl id="tb_area">
-			<dt class="title">トラックバック</dt>
-			<!-- BEGIN trackback -->
-			<dt class="tb_title">{trackback_title}</dt>
-			<dd>{trackback_excerpt}</dd>
-			<dd class="tb_state">
-				<ul>
-					<li>{trackback_blog_name}</li>
-					<li>{trackback_time}</li>
-				</ul>
-			</dd>
-			<!-- END trackback -->
-			</dl>
-		</div>
-		<!-- END trackback_area -->
-
-
-
-			<!-- BEGIN profile_area -->
-			<div class="entry_area">
-				<dl id="profile_area">
-				<dt class="title">プロフィール</dt>
-				<dd class="txt_bold">{profile_name}</dd>
-				<dd>{profile_description}</dd>
-				</dl>
-			</div>
-			<!-- END profile_area -->
-			
-			
-
-	</div>
-	<!-- /main/ -->
-	
-		<!-- side -->
-	<div id="side">
-
-	
-		<!-- side_header -->
-		<div class="side_header">
-
-			<!-- BEGIN calendar -->
-			<dl>
-			<dt>calendar</dt>
-			<dd class="calendar">
-			{calendar}
-			</dd>
-			</dl>
-			<!-- END calendar -->
-
-			<!-- BEGIN jugem_ad -->
-			<dl>
-			<dt>PR</dt>
-			<dd>
-			{ad}
-			</dd>
-			</dl>
-			<!-- END jugem_ad -->
-
-
-			<!-- BEGIN freespace1 -->
-			<dl>
-			<dt>{freespace_title1}</dt>
-			<dd>
-			{freespace_contents1}
-			</dd>
-			</dl>
-			<!-- END freespace1 -->
-
-			<!-- BEGIN freespace2 -->
-			<dl>
-			<dt>{freespace_title2}</dt>
-			<dd>
-			{freespace_contents2}
-			</dd>
-			</dl>
-			<!-- END freespace2 -->
-
-			<!-- BEGIN freespace3 -->
-			<dl>
-			<dt>{freespace_title3}</dt>
-			<dd>
-			{freespace_contents3}
-			</dd>
-			</dl>
-			<!-- END freespace3 -->
-			
-			<!-- BEGIN freespace4 -->
-			<dl>
-			<dt>{freespace_title4}</dt>
-			<dd>
-			{freespace_contents4}
-			</dd>
-			</dl>
-			<!-- END freespace4 -->
-			
-			<!-- BEGIN freespace5 -->
-			<dl>
-			<dt>{freespace_title5}</dt>
-			<dd>
-			{freespace_contents5}
-			</dd>
-			</dl>
-			<!-- END freespace5 -->
-
-			<!-- BEGIN selected_entry -->
-			<dl>
-			<dt>selected entries</dt>
-			<dd>
-			{selected_entry_list}
-			</dd>
-			</dl>
-			<!-- END selected_entry -->
-			
-			
-			<!-- BEGIN category -->
-			<dl>
-			<dt>categories</dt>
-			<dd>
-			{category_list}
-			</dd>
-			</dl>
-			<!-- END category -->
-
-			<!-- BEGIN archives -->
-			<dl>
-			<dt>archives</dt>
-			<dd>
-			{archives_list}
-			</dd>
-			</dl>
-			<!-- END archives -->
-
-			<!-- BEGIN recent_comment -->
-			<dl>
-			<dt>recent comment</dt>
-			<dd>
-			{recent_comment_list}
-			</dd>
-			</dl>
-			<!-- END recent_comment -->
-
-
-			<!-- BEGIN recent_trackback -->
-			<dl>
-			<dt>recent trackback</dt>
-			<dd>
-			{recent_trackback_list}
-			</dd>
-			</dl>
-			<!-- END recent_trackback -->
-
-			<!-- BEGIN amazon -->
-			<dl>
-			<dt>recommend</dt>
-			<dd>
-			{amazon_item}
-			</dd>
-			</dl>
-			<!-- END amazon -->
-
-			<!-- BEGIN link -->
-			<dl>
-			<dt>links</dt>
-			<dd>
-			{link_list}
-			</dd>
-			</dl>
-			<!-- END link -->
-
-
-			<!-- BEGIN profile -->
-			<dl>
-			<dt>profile</dt>
-			<dd>
-			{user_list}
-			</dd>
-			</dl>
-			<!-- END profile -->
-
-
-			<!-- search -->
-			<dl>
-			<dt>search this site.</dt>
-			<dd>
-			<form method="get" action="./">
-			<input id="search" name="search" size="20" style="width:110px" class="search" />
-			<input type="image" src="http://imaging.jugem.jp/template/piano/img/search.gif" alt="search this site." value="Search" />
-			</form>
-			</dd>
-			</dl>
-			<!-- /search/ -->
-
-			<!-- powered -->
-			<dl>
-			<dt>others</dt>
-			<dd>
-			<ul>
-			<li><a href="./manage/">管理者ページ</a></li>
-			<li><a href="./?mode=rss">RSS1.0</a></li>
-			<li><a href="./?mode=atom">Atom0.3</a></li>
-			</ul>
-			</dd>
-			</dl>
-
-			<!-- moblie -->
-			<dl>
-			<dt>mobile</dt>
-			<dd>
-			{site_qrcode}
-			</dd>
-			</dl>
-			<!-- //moblie -->
-
-			<!-- powered -->
-			<dl>
-			<dt>powered</dt>
-			<dd>
-			{powered}
-			</dd>
-			</dl>
-			<!-- //powered -->
-
-
-		</div>
-		<!-- /side_header/ -->
-			<div class="side_footer">&nbsp;</div>
-	</div>
-	<!-- /side/ -->
-
-	<br class="clear" />
-
-	<div id="page_area">
-		<!-- BEGIN page -->
-		<div class="page_navi" style=" ">{prev_page_link} | {page_now}/{page_num}PAGES | {next_page_link}</div>
-		<!-- END page -->
-		<div class="page_top"><a href="#top">このページの先頭へ▲</a></div>
-		<br class="clear" />
-	</div>
-
-		
-	</div>
-	<!-- /content/ -->
-
-	<address class="copyright">{copyright}</address>
-	<div id="footer">&nbsp;</div>
-	
-
-</div>
-</div>
-<!-- /wrapper/ -->
-
-{gmo_header_src}
-
-</body>
+  
+    <!-- BEGIN title -->
+      <h1>{blog_name}</h1>
+      <p>{blog_description}</p>
+    <!-- END title -->
+    
+    <!-- BEGIN sequel -->
+      {prev_entry} | <a href="./">main</a> | {next_entry} 
+    <!-- END sequel -->
+    <!-- BEGIN entry -->
+      <h2>{entry_title}</h2>
+      {love}
+      {entry_date}
+      {category_name}
+      {entry_time}
+      {comment_num}
+      {trackback_num}
+      {logpi_link}
+      {user_name}
+      
+      {entry_description}
+      <a name="sequel"></a>
+      {entry_sequel}
+      {trackback_auto_discovery}
+    <!-- END entry -->
+    
+    <!-- BEGIN comment_area -->
+      <a name="comments" id="comments"></a>
+      <!-- BEGIN comment -->
+        {comment_description}
+        {comment_name}
+        {comment_time}
+      <!-- END comment -->
+      
+      <form name="comment_area" id="comment_area" action="./?mode=comment" method="post">
+        <input type="hidden" name="entry_id" value="{entry_id}" class="input">
+        <input type="text" tabindex="1" name="name" id="name" value="{cookie_name}" class="input">
+        <input type="text" tabindex="2" name="email" id="email" value="{cookie_email}" class="input">
+        <input type="text" tabindex="3" name="url" id="url" value="{cookie_url}" class="input">
+        <textarea tabindex="4" id="description" name="description" rows="5"></textarea>
+        <input tabindex="5" type="submit" value="コメント送信" onclick="javascript:setval();">
+        <input type="checkbox" name="set_cookie" value="1" id="set_cookie"><label for="set_cookie">入力情報を登録しますか？</label>
+      </form>
+    <!-- END comment_area -->
+    
+    <!-- BEGIN trackback_area -->
+      <a name="trackback" id="trackback"></a>
+      <input type="text" value="{trackback_url}" class="input">
+      <!-- BEGIN trackback -->
+        {trackback_title}
+        {trackback_excerpt}
+        {trackback_blog_name}
+        {trackback_time}
+      <!-- END trackback -->
+    <!-- END trackback_area -->
+    
+    <!-- BEGIN profile_area -->
+      {profile_name}
+      {profile_description}
+    <!-- END profile_area -->
+    
+    <!-- BEGIN calendar -->
+      {calendar}
+    <!-- END calendar -->
+    
+    <!-- BEGIN jugem_ad -->
+      {ad}
+    <!-- END jugem_ad -->
+    
+    <!-- BEGIN freespace1 -->
+      {freespace_title1}
+      {freespace_contents1}
+    <!-- END freespace1 -->
+    
+    <!-- BEGIN freespace2 -->
+      {freespace_title2}
+      {freespace_contents2}
+    <!-- END freespace2 -->
+    
+    <!-- BEGIN freespace3 -->
+      {freespace_title3}
+      {freespace_contents3}
+    <!-- END freespace3 -->
+    
+    <!-- BEGIN freespace4 -->
+      {freespace_title4}
+      {freespace_contents4}
+    <!-- END freespace4 -->
+    
+    <!-- BEGIN freespace5 -->
+      {freespace_title5}
+      {freespace_contents5}
+    <!-- END freespace5 -->
+    
+    <!-- BEGIN selected_entry -->	
+      {selected_entry_list}
+    <!-- END selected_entry -->
+    
+    <!-- BEGIN category -->
+      {category_list}
+    <!-- END category -->
+    
+    <!-- BEGIN archives -->
+      {archives_list}
+    <!-- END archives -->
+    
+    <!-- BEGIN recent_comment -->
+      {recent_comment_list}
+    <!-- END recent_comment -->
+    
+    <!-- BEGIN recent_trackback -->
+      {recent_trackback_list}
+    <!-- END recent_trackback -->
+    
+    <!-- BEGIN amazon -->
+      {amazon_item}
+    <!-- END amazon -->
+    
+    <!-- BEGIN link -->
+      {link_list}
+    <!-- END link -->
+    
+    <!-- BEGIN profile -->
+      {user_list}
+    <!-- END profile -->
+    
+    <form method="get" action="./">
+      <input id="search" name="search">
+      <input type="submit" value="検索">
+    </form>
+    
+    <ul>
+      <li>
+        <a href="./manage/">管理者ページ</a>
+      </li>
+      <li>
+        <a href="./?mode=rss">RSS1.0</a>
+      </li>
+      <li>
+        <a href="./?mode=atom">Atom0.3</a>
+      </li>
+    </ul>
+    
+    {site_qrcode}
+    {powered}
+    
+    <!-- BEGIN page -->
+  	  {prev_page_link} | {page_now}/{page_num}PAGES | {next_page_link}
+    <!-- END page -->
+    
+  	{copyright}
+    {gmo_header_src}
+  	
+  </body>
 </html>
