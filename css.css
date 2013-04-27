@@ -26,7 +26,8 @@ object,object:focus { outline: none; }
 
 .main {
   float: left;
-  width: 750px;
+  width: 540px;
+  padding-left: 210px;
 }
 
 .sub {
