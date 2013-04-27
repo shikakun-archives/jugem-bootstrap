@@ -120,165 +120,170 @@
       </section>
     <!-- END profile_area -->
     
-    <!-- BEGIN calendar -->
-      <div class="widget widget-calendar">
-        {calendar}
-      </div>
-    <!-- END calendar -->
+    <div id="widgets">
+      <!-- BEGIN calendar -->
+        <div class="widget widget-calendar">
+          {calendar}
+        </div>
+      <!-- END calendar -->
+      
+      <!-- BEGIN jugem_ad -->
+        <div class="widget widget-ad">
+          {ad}
+        </div>
+      <!-- END jugem_ad -->
+      
+      <!-- BEGIN freespace1 -->
+        <section class="widget widget-freespace">
+          <h2 class="title">
+            {freespace_title1}
+          </h2>
+          {freespace_contents1}
+        </section>
+      <!-- END freespace1 -->
+      
+      <!-- BEGIN freespace2 -->
+        <section class="widget widget-freespace">
+          <h2 class="title">
+            {freespace_title2}
+          </h2>
+          {freespace_contents2}
+        </section>
+      <!-- END freespace2 -->
+      
+      <!-- BEGIN freespace3 -->
+        <section class="widget widget-freespace">
+          <h2 class="title">
+            {freespace_title3}
+          </h2>
+          {freespace_contents3}
+        </section>
+      <!-- END freespace3 -->
+      
+      <!-- BEGIN freespace4 -->
+        <section class="widget widget-freespace">
+          <h2 class="title">
+            {freespace_title4}
+          </h2>
+          {freespace_contents4}
+        </section>
+      <!-- END freespace4 -->
+      
+      <!-- BEGIN freespace5 -->
+        <section class="widget widget-freespace">
+          <h2 class="title">
+            {freespace_title5}
+          </h2>
+          {freespace_contents5}
+        </section>
+      <!-- END freespace5 -->
+      
+      <!-- BEGIN selected_entry -->	
+        <section class="widget widget-selected-entry">
+          <h2 class="title">
+            Selected entry
+          </h2>
+          {selected_entry_list}
+        </section>
+      <!-- END selected_entry -->
+      
+      <!-- BEGIN category -->
+        <section class="widget widget-category">
+          <h2 class="title">
+            Category
+          </h2>
+          {category_list}
+        </section>
+      <!-- END category -->
+      
+      <!-- BEGIN archives -->
+        <section class="widget widget-archives">
+          <h2 class="title">
+            Archives
+          </h2>
+          {archives_list}
+        </section>
+      <!-- END archives -->
+      
+      <!-- BEGIN recent_comment -->
+        <section class="widget widget-recent-comment">
+          <h2 class="title">
+            Recent comments
+          </h2>
+          {recent_comment_list}
+        </section>
+      <!-- END recent_comment -->
+      
+      <!-- BEGIN recent_trackback -->
+        <section class="widget widget-recent-trackback">
+          <h2 class="title">
+            Recent trackback
+          </h2>
+          {recent_trackback_list}
+        </section>
+      <!-- END recent_trackback -->
+      
+      <!-- BEGIN amazon -->
+        <div class="widget widget-amazon">
+          {amazon_item}
+        </div>
+      <!-- END amazon -->
+      
+      <!-- BEGIN link -->
+        <section class="widget widget-link">
+          <h2 class="title">
+            Link
+          </h2>
+          {link_list}
+        </section>
+      <!-- END link -->
+      
+      <!-- BEGIN profile -->
+        <section class="widget widget-profile">
+          <h2 class="title">
+            Author
+          </h2>
+          {user_list}
+        </section>
+      <!-- END profile -->
+      
+      <form class="widget widget-search" method="get" action="./">
+        <input name="search">
+        <input type="submit" value="検索">
+      </form>
+      
+      {site_qrcode}
+      {powered}
     
-    <!-- BEGIN jugem_ad -->
-      <div class="widget widget-ad">
-        {ad}
-      </div>
-    <!-- END jugem_ad -->
-    
-    <!-- BEGIN freespace1 -->
-      <section class="widget widget-freespace">
-        <h2 class="title">
-          {freespace_title1}
-        </h2>
-        {freespace_contents1}
-      </section>
-    <!-- END freespace1 -->
-    
-    <!-- BEGIN freespace2 -->
-      <section class="widget widget-freespace">
-        <h2 class="title">
-          {freespace_title2}
-        </h2>
-        {freespace_contents2}
-      </section>
-    <!-- END freespace2 -->
-    
-    <!-- BEGIN freespace3 -->
-      <section class="widget widget-freespace">
-        <h2 class="title">
-          {freespace_title3}
-        </h2>
-        {freespace_contents3}
-      </section>
-    <!-- END freespace3 -->
-    
-    <!-- BEGIN freespace4 -->
-      <section class="widget widget-freespace">
-        <h2 class="title">
-          {freespace_title4}
-        </h2>
-        {freespace_contents4}
-      </section>
-    <!-- END freespace4 -->
-    
-    <!-- BEGIN freespace5 -->
-      <section class="widget widget-freespace">
-        <h2 class="title">
-          {freespace_title5}
-        </h2>
-        {freespace_contents5}
-      </section>
-    <!-- END freespace5 -->
-    
-    <!-- BEGIN selected_entry -->	
-      <section class="widget widget-selected-entry">
-        <h2 class="title">
-          Selected entry
-        </h2>
-        {selected_entry_list}
-      </section>
-    <!-- END selected_entry -->
-    
-    <!-- BEGIN category -->
-      <section class="widget widget-category">
-        <h2 class="title">
-          Category
-        </h2>
-        {category_list}
-      </section>
-    <!-- END category -->
-    
-    <!-- BEGIN archives -->
-      <section class="widget widget-archives">
-        <h2 class="title">
-          Archives
-        </h2>
-        {archives_list}
-      </section>
-    <!-- END archives -->
-    
-    <!-- BEGIN recent_comment -->
-      <section class="widget widget-recent-comment">
-        <h2 class="title">
-          Recent comments
-        </h2>
-        {recent_comment_list}
-      </section>
-    <!-- END recent_comment -->
-    
-    <!-- BEGIN recent_trackback -->
-      <section class="widget widget-recent-trackback">
-        <h2 class="title">
-          Recent trackback
-        </h2>
-        {recent_trackback_list}
-      </section>
-    <!-- END recent_trackback -->
-    
-    <!-- BEGIN amazon -->
-      <div class="widget widget-amazon">
-        {amazon_item}
-      </div>
-    <!-- END amazon -->
-    
-    <!-- BEGIN link -->
-      <section class="widget widget-link">
-        <h2 class="title">
-          Link
-        </h2>
-        {link_list}
-      </section>
-    <!-- END link -->
-    
-    <!-- BEGIN profile -->
-      <section class="widget widget-profile">
-        <h2 class="title">
-          Author
-        </h2>
-        {user_list}
-      </section>
-    <!-- END profile -->
-    
-    <form class="widget widget-search" method="get" action="./">
-      <input name="search">
-      <input type="submit" value="検索">
-    </form>
-    
-    <ul class="widget">
-      <li>
-        <a href="./manage/">管理者ページ</a>
-      </li>
-      <li>
-        <a href="./?mode=rss">RSS1.0</a>
-      </li>
-      <li>
-        <a href="./?mode=atom">Atom0.3</a>
-      </li>
-    </ul>
-    
-    {site_qrcode}
-    {powered}
-    
-    <!-- BEGIN page -->
-  	  <ul class="page">
-  	    <li>
-  	      {prev_page_link}
+    </div>
+    <footer id="footer">
+      
+      <!-- BEGIN page -->
+    	  <ul class="page">
+    	    <li>
+    	      {prev_page_link}
+          </li>
+    	    <li>
+    	      {page_now}/{page_num}
+    	    </li>
+    	    <li>
+    	      {next_page_link}
+    	    </li>
+    	  </ul>
+      <!-- END page -->
+      
+      <ul class="links">
+        <li>
+          <a href="./manage/">管理者ページ</a>
         </li>
-  	    <li>
-  	      {page_now}/{page_num}
-  	    </li>
-  	    <li>
-  	      {next_page_link}
-  	    </li>
-  	  </ul>
-    <!-- END page -->
-  	{copyright}
+        <li>
+          <a href="./?mode=rss">RSS1.0</a>
+        </li>
+        <li>
+          <a href="./?mode=atom">Atom0.3</a>
+        </li>
+      </ul>
+      <p id="copyright">{copyright}</p>
+    </footer>
   </body>
 </html>
