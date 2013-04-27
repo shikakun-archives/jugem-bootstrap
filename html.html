@@ -51,30 +51,30 @@
           <h2 class="title">
             {entry_title}
           </h2>
-          <div class="entry_description">
+          <div class="description">
             {entry_description}
+            <a name="sequel"></a>
+            {entry_sequel}
           </div>
-          
-          <div class="entry_metadata">
-            {love}
+          <div class="metadata">
             {entry_date}
-            {category_name}
             {entry_time}
             {comment_num}
             {trackback_num}
-            {logpi_link}
+            {category_name}
             {user_name}
+            {logpi_link}
+            {love}
           </div>
-          
-          <a name="sequel"></a>
-          {entry_sequel}
           {trackback_auto_discovery}
         </article>
       <!-- END entry -->
       
       <!-- BEGIN comment_area -->
         <section id="comments">
-          <h3>コメント</h3>
+          <h3 class="title">
+            Comment
+          </h3>
           
           <!-- BEGIN comment -->
             <div class="comment">
@@ -84,13 +84,13 @@
             </div>
           <!-- END comment -->
           
-          <form id="comment_form" name="comment_area" action="./?mode=comment" method="post">
+          <form class="form" name="comment_area" action="./?mode=comment" method="post">
             <input name="name" type="text" value="{cookie_name}" tabindex="1">
             <input name="email" type="text" value="{cookie_email}" tabindex="2">
             <input name="url" type="text" value="{cookie_url}" tabindex="3">
             <textarea name="description" rows="5" tabindex="4"></textarea>
             <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
-            <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">名前など入力情報を保存する</label>
+            <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">Save</label>
             <input name="entry_id" type="hidden" value="{entry_id}">
           </form>
         </section>
@@ -98,18 +98,28 @@
       
       <!-- BEGIN trackback_area -->
         <section id="trackbacks">
-          <h3>トラックバック</h3>
+          <h3 class="title">
+            Trackback
+          </h3>
           
           <!-- BEGIN trackback -->
             <section class="trackback">
-              {trackback_title}
-              {trackback_excerpt}
-              {trackback_blog_name}
-              {trackback_time}
+              <h4 class="title">
+                {trackback_title}
+              </h4>
+              <div class="excerpt">
+                {trackback_excerpt}
+              </div>
+              <div class="metadata">
+                <p class="blog-name">{trackback_blog_name}</p>
+                <time class="time">{trackback_time}</time>
+              </div>
             </section>
           <!-- END trackback -->
           
-          <h4>トラックバック URL</h4>
+          <h4 class="title">
+            Trackback URL
+          </h4>
           <input type="text" value="{trackback_url}">
         </section>
       <!-- END trackback_area -->
@@ -119,7 +129,7 @@
           <h2 class="title">
             {profile_name}ja
           </h2>
-          <div>
+          <div class="description">
             {profile_description}
           </div>
         </section>
@@ -284,7 +294,7 @@
     	  </ul>
       <!-- END page -->
       
-      <ul class="links">
+      <ul class="link">
         <li>
           <a href="./manage/">管理者ページ</a>
         </li>
