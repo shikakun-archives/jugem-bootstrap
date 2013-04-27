@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={site_encoding}" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>{site_title}</title>
+<link rel="stylesheet" href="{site_css}" type="text/css" />
+<link type="text/css" href="{gmo_header_css}" rel="stylesheet" media="screen,print" />
+<link rel="alternate" type="application/rss+xml" title="RSS" href="{site_rss}" />
+<link rel="alternate" type="application/atom+xml" href="{site_atom}" />
+<link rel="alternate" media="handheld" type="application/xhtml+xml" href="{mobile_url}" />
+<script type="text/javascript" src="http://imaging.jugem.jp/template/js/cookie.js"></script>
+
+</head>
+
+<body onload="javascript:initval();">
+{gmo_header_src}
+
+
+
+<!-- wrapper -->
+<div id="wrapper_body">
+<div id="wrapper">
+
+<a name="top" id="top"></a>
+
+	<!-- header -->
+	<div id="header">
+		<!-- BEGIN title -->
+		<h1>{blog_name}</h1>
+		<p>{blog_description}</p>
+		<!-- END title -->
+	</div>
+	<!-- /header/ -->
+
+<!-- content -->
+<div id="content">
+
+	<!-- main -->
+	<div id="main">
+
+		<!-- BEGIN sequel -->
+		<div class="entry_navi">
+		{prev_entry} | <a href="./">main</a> | {next_entry} 
+		</div>
+		<!-- END sequel -->
+
+		<!-- BEGIN entry -->
+		<div class="entry_area">
+			<h2>{entry_title}</h2>
+			{love}
+			<ul class="state">
+			<li>{entry_date}</li>
+			<li>{category_name}</li>
+			<li>{entry_time}</li>
+			<li>{comment_num}</li>
+			<li>{trackback_num}</li>
+			<li>{logpi_link}</li>
+			<li>by {user_name}</li>
+			</ul>
+
+			<div class="entry">{entry_description}</div>
+			<a name="sequel"></a>
+			<div class="entry">{entry_sequel}</div>
+			<br class="clear" />
+			
+			{trackback_auto_discovery}
+		</div>
+		<!-- END entry -->
+
+		<!-- BEGIN comment_area -->
+		<a name="comments" id="comments"></a>
+		<div class="entry_area">
+			<dl id="com_area">
+			<dt class="title">コメント</dt>
+			<!-- BEGIN comment -->
+			<dt class="com_desc">{comment_description}</dt>
+			<dd>
+				<ul>
+				<li>{comment_name}</li>
+				<li>{comment_time}</li>
+				</ul>
+			</dd>
+			<!-- END comment -->
+			</dl>
+		</div>
+		
+		<div class="entry_area">
+			<dl id="com_form">
+			<dt class="title">コメントする</dt>
+			<dd>
+			<form name="comment_area" id="comment_area" action="./?mode=comment" method="post">
+			<input type="hidden" name="entry_id" value="{entry_id}" class="input" />
+			
+			<label for="name">name:</label><br/>
+			<input type="text" tabindex="1" name="name" id="name" value="{cookie_name}" class="input" /><br />
+			
+			<label for="email">email:</label><br>
+			<input type="text" tabindex="2" name="email" id="email" value="{cookie_email}" class="input" /><br />
+			
+			<label for="url">url:</label><br>
+			<input type="text" tabindex="3" name="url" id="url" value="{cookie_url}" class="input" /><br />
+			
+			<label for="description">comments:</label><br />
+			<textarea tabindex="4" id="description" name="description" rows="5"></textarea><br />
+			
+			<input tabindex="5" type="image" src="http://imaging.jugem.jp/template/piano/img/submit.gif" value="コメント送信" onclick="javascript:setval();" /><br />
+			<input type="checkbox" name="set_cookie" value="1" id="set_cookie"><label for="set_cookie">入力情報を登録しますか？</label>
+			
+			
+			
+			</form>
+			</dd>
+			</dl>
+		</div>
+		<!-- END comment_area -->
+
+
+		<!-- BEGIN trackback_area -->
+		<a name="trackback" id="trackback"></a>
+		<div class="entry_area">
+			<dl id="tb_form">
+			<dt class="title">この記事のトラックバックURL</dt>
+			<dd><input type="text" value="{trackback_url}" class="input" /></dd>
+			</dl>
+		</div>
+
+		<div class="entry_area">
+			<dl id="tb_area">
+			<dt class="title">トラックバック</dt>
+			<!-- BEGIN trackback -->
+			<dt class="tb_title">{trackback_title}</dt>
+			<dd>{trackback_excerpt}</dd>
+			<dd class="tb_state">
+				<ul>
+					<li>{trackback_blog_name}</li>
+					<li>{trackback_time}</li>
+				</ul>
+			</dd>
+			<!-- END trackback -->
+			</dl>
+		</div>
+		<!-- END trackback_area -->
+
+
+
+			<!-- BEGIN profile_area -->
+			<div class="entry_area">
+				<dl id="profile_area">
+				<dt class="title">プロフィール</dt>
+				<dd class="txt_bold">{profile_name}</dd>
+				<dd>{profile_description}</dd>
+				</dl>
+			</div>
+			<!-- END profile_area -->
+			
+			
+
+	</div>
+	<!-- /main/ -->
+	
+		<!-- side -->
+	<div id="side">
+
+	
+		<!-- side_header -->
+		<div class="side_header">
+
+			<!-- BEGIN calendar -->
+			<dl>
+			<dt>calendar</dt>
+			<dd class="calendar">
+			{calendar}
+			</dd>
+			</dl>
+			<!-- END calendar -->
+
+			<!-- BEGIN jugem_ad -->
+			<dl>
+			<dt>PR</dt>
+			<dd>
+			{ad}
+			</dd>
+			</dl>
+			<!-- END jugem_ad -->
+
+
+			<!-- BEGIN freespace1 -->
+			<dl>
+			<dt>{freespace_title1}</dt>
+			<dd>
+			{freespace_contents1}
+			</dd>
+			</dl>
+			<!-- END freespace1 -->
+
+			<!-- BEGIN freespace2 -->
+			<dl>
+			<dt>{freespace_title2}</dt>
+			<dd>
+			{freespace_contents2}
+			</dd>
+			</dl>
+			<!-- END freespace2 -->
+
+			<!-- BEGIN freespace3 -->
+			<dl>
+			<dt>{freespace_title3}</dt>
+			<dd>
+			{freespace_contents3}
+			</dd>
+			</dl>
+			<!-- END freespace3 -->
+			
+			<!-- BEGIN freespace4 -->
+			<dl>
+			<dt>{freespace_title4}</dt>
+			<dd>
+			{freespace_contents4}
+			</dd>
+			</dl>
+			<!-- END freespace4 -->
+			
+			<!-- BEGIN freespace5 -->
+			<dl>
+			<dt>{freespace_title5}</dt>
+			<dd>
+			{freespace_contents5}
+			</dd>
+			</dl>
+			<!-- END freespace5 -->
+
+			<!-- BEGIN selected_entry -->
+			<dl>
+			<dt>selected entries</dt>
+			<dd>
+			{selected_entry_list}
+			</dd>
+			</dl>
+			<!-- END selected_entry -->
+			
+			
+			<!-- BEGIN category -->
+			<dl>
+			<dt>categories</dt>
+			<dd>
+			{category_list}
+			</dd>
+			</dl>
+			<!-- END category -->
+
+			<!-- BEGIN archives -->
+			<dl>
+			<dt>archives</dt>
+			<dd>
+			{archives_list}
+			</dd>
+			</dl>
+			<!-- END archives -->
+
+			<!-- BEGIN recent_comment -->
+			<dl>
+			<dt>recent comment</dt>
+			<dd>
+			{recent_comment_list}
+			</dd>
+			</dl>
+			<!-- END recent_comment -->
+
+
+			<!-- BEGIN recent_trackback -->
+			<dl>
+			<dt>recent trackback</dt>
+			<dd>
+			{recent_trackback_list}
+			</dd>
+			</dl>
+			<!-- END recent_trackback -->
+
+			<!-- BEGIN amazon -->
+			<dl>
+			<dt>recommend</dt>
+			<dd>
+			{amazon_item}
+			</dd>
+			</dl>
+			<!-- END amazon -->
+
+			<!-- BEGIN link -->
+			<dl>
+			<dt>links</dt>
+			<dd>
+			{link_list}
+			</dd>
+			</dl>
+			<!-- END link -->
+
+
+			<!-- BEGIN profile -->
+			<dl>
+			<dt>profile</dt>
+			<dd>
+			{user_list}
+			</dd>
+			</dl>
+			<!-- END profile -->
+
+
+			<!-- search -->
+			<dl>
+			<dt>search this site.</dt>
+			<dd>
+			<form method="get" action="./">
+			<input id="search" name="search" size="20" style="width:110px" class="search" />
+			<input type="image" src="http://imaging.jugem.jp/template/piano/img/search.gif" alt="search this site." value="Search" />
+			</form>
+			</dd>
+			</dl>
+			<!-- /search/ -->
+
+			<!-- powered -->
+			<dl>
+			<dt>others</dt>
+			<dd>
+			<ul>
+			<li><a href="./manage/">管理者ページ</a></li>
+			<li><a href="./?mode=rss">RSS1.0</a></li>
+			<li><a href="./?mode=atom">Atom0.3</a></li>
+			</ul>
+			</dd>
+			</dl>
+
+			<!-- moblie -->
+			<dl>
+			<dt>mobile</dt>
+			<dd>
+			{site_qrcode}
+			</dd>
+			</dl>
+			<!-- //moblie -->
+
+			<!-- powered -->
+			<dl>
+			<dt>powered</dt>
+			<dd>
+			{powered}
+			</dd>
+			</dl>
+			<!-- //powered -->
+
+
+		</div>
+		<!-- /side_header/ -->
+			<div class="side_footer">&nbsp;</div>
+	</div>
+	<!-- /side/ -->
+
+	<br class="clear" />
+
+	<div id="page_area">
+		<!-- BEGIN page -->
+		<div class="page_navi" style=" ">{prev_page_link} | {page_now}/{page_num}PAGES | {next_page_link}</div>
+		<!-- END page -->
+		<div class="page_top"><a href="#top">このページの先頭へ▲</a></div>
+		<br class="clear" />
+	</div>
+
+		
+	</div>
+	<!-- /content/ -->
+
+	<address class="copyright">{copyright}</address>
+	<div id="footer">&nbsp;</div>
+	
+
+</div>
+</div>
+<!-- /wrapper/ -->
+
+</body>
+</html>
