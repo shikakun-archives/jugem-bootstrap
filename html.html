@@ -21,7 +21,7 @@
   <body id="{eid}{page}{cid}{month}{day}{search}{pid}{index}" onload="javascript:initval();">
     {gmo_header_src}
     <header id="header" class="wrapper">
-      <div class="inner">
+      <div class="inner clearfix">
         
         <!-- BEGIN title -->
           <h1 class="title">
@@ -162,12 +162,6 @@
             </div>
           <!-- END calendar -->
           
-          <!-- BEGIN jugem_ad -->
-            <div class="widget widget-ad">
-              {ad}
-            </div>
-          <!-- END jugem_ad -->
-          
           <!-- BEGIN freespace1 -->
             <section class="widget widget-freespace">
               <h2 class="title">
@@ -258,12 +252,6 @@
             </section>
           <!-- END recent_trackback -->
           
-          <!-- BEGIN amazon -->
-            <div class="widget widget-amazon">
-              {amazon_item}
-            </div>
-          <!-- END amazon -->
-          
           <!-- BEGIN link -->
             <section class="widget widget-link">
               <h2 class="title">
@@ -286,6 +274,13 @@
             <input name="search">
             <input type="submit" value="検索">
           </form>
+          
+          <!-- BEGIN amazon -->
+            <div class="widget widget-amazon">
+              {amazon_item}
+            </div>
+          <!-- END amazon -->
+          
           <div class="widget widget-site-qrcode">
             {site_qrcode}
           </div>
@@ -296,19 +291,26 @@
       </div>
     </div>
     <footer id="footer" class="wrapper">
-      <div class="inner">
-        <ul class="link">
-          <li>
-            <a href="./manage/">管理者ページ</a>
-          </li>
-          <li>
-            <a href="./?mode=rss">RSS1.0</a>
-          </li>
-          <li>
-            <a href="./?mode=atom">Atom0.3</a>
-          </li>
-        </ul>
-        <p id="copyright">{copyright}</p>
+      <div class="inner clearfix">
+        <div class="content">
+          <ul class="link">
+            <li>
+              <a href="./manage/">管理者ページ</a>
+            </li>
+            <li>
+              <a href="./?mode=rss">RSS1.0</a>
+            </li>
+            <li>
+              <a href="./?mode=atom">Atom0.3</a>
+            </li>
+          </ul>
+          <p id="copyright">{copyright}</p>
+        </div>
+        <div class="widget widget-ad">
+          <!-- BEGIN jugem_ad -->
+            {ad}
+          <!-- END jugem_ad -->
+        </div>
       </div>
     </footer>
   </body>
