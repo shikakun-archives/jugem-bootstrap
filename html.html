@@ -21,106 +21,114 @@
   <body id="{eid}{page}{cid}{month}{day}{search}{pid}{index}" onload="javascript:initval();">
     {gmo_header_src}
     
-    <!-- BEGIN title -->
-      <header id="header">
+    <header id="header">
+      
+      <!-- BEGIN title -->
         <h1 class="title">
           {blog_name}
         </h1>
         <p>{blog_description}</p>
-      </header>
-    <!-- END title -->
-    
-    <!-- BEGIN sequel -->
-      <ul class="sequel">
-        <li>
-          {prev_entry}
-        </li>
-        <li>
-          <a href="./">ブログトップ</a>
-        </li>
-        <li>
-          {next_entry}
-        </li>
-      </ul> 
-    <!-- END sequel -->
-    
-    <!-- BEGIN entry -->
-      <section class="entry">
-        <h2 class="title">
-          {entry_title}
-        </h2>
-        <div class="entry_description">
-          {entry_description}
-        </div>
-        
-        <div class="entry_metadata">
-          {love}
-          {entry_date}
-          {category_name}
-          {entry_time}
-          {comment_num}
-          {trackback_num}
-          {logpi_link}
-          {user_name}
-        </div>
-        
-        <a name="sequel"></a>
-        {entry_sequel}
-        {trackback_auto_discovery}
-      </section>
-    <!-- END entry -->
-    
-    <!-- BEGIN comment_area -->
-      <section id="comments">
-        <h3>コメント</h3>
-        <!-- BEGIN comment -->
-          <div class="comment">
-            {comment_description}
-            {comment_name}
-            {comment_time}
+      <!-- END title -->
+      
+    </header>
+    <div id="contents">
+      
+      <!-- BEGIN sequel -->
+        <ul class="sequel">
+          <li>
+            {prev_entry}
+          </li>
+          <li>
+            <a href="./">ブログトップ</a>
+          </li>
+          <li>
+            {next_entry}
+          </li>
+        </ul> 
+      <!-- END sequel -->
+      
+      <!-- BEGIN entry -->
+        <section class="entry">
+          <h2 class="title">
+            {entry_title}
+          </h2>
+          <div class="entry_description">
+            {entry_description}
           </div>
-        <!-- END comment -->
-        
-        <form id="comment_form" name="comment_area" action="./?mode=comment" method="post">
-          <input name="name" type="text" value="{cookie_name}" tabindex="1">
-          <input name="email" type="text" value="{cookie_email}" tabindex="2">
-          <input name="url" type="text" value="{cookie_url}" tabindex="3">
-          <textarea name="description" rows="5" tabindex="4"></textarea>
-          <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
-          <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">名前など入力情報を保存する</label>
-          <input name="entry_id" type="hidden" value="{entry_id}">
-        </form>
-      </section>
-    <!-- END comment_area -->
-    
-    <!-- BEGIN trackback_area -->
-      <section id="trackbacks">
-        <h3>トラックバック</h3>
-        <!-- BEGIN trackback -->
-          <section class="trackback">
-            {trackback_title}
-            {trackback_excerpt}
-            {trackback_blog_name}
-            {trackback_time}
-          </section>
-        <!-- END trackback -->
-        <h4>トラックバック URL</h4>
-        <input type="text" value="{trackback_url}">
-      </section>
-    <!-- END trackback_area -->
-    
-    <!-- BEGIN profile_area -->
-      <section class="entry">
-        <h2 class="title">
-          {profile_name}ja
-        </h2>
-        <div>
-          {profile_description}
-        </div>
-      </section>
-    <!-- END profile_area -->
-    
+          
+          <div class="entry_metadata">
+            {love}
+            {entry_date}
+            {category_name}
+            {entry_time}
+            {comment_num}
+            {trackback_num}
+            {logpi_link}
+            {user_name}
+          </div>
+          
+          <a name="sequel"></a>
+          {entry_sequel}
+          {trackback_auto_discovery}
+        </section>
+      <!-- END entry -->
+      
+      <!-- BEGIN comment_area -->
+        <section id="comments">
+          <h3>コメント</h3>
+          
+          <!-- BEGIN comment -->
+            <div class="comment">
+              {comment_description}
+              {comment_name}
+              {comment_time}
+            </div>
+          <!-- END comment -->
+          
+          <form id="comment_form" name="comment_area" action="./?mode=comment" method="post">
+            <input name="name" type="text" value="{cookie_name}" tabindex="1">
+            <input name="email" type="text" value="{cookie_email}" tabindex="2">
+            <input name="url" type="text" value="{cookie_url}" tabindex="3">
+            <textarea name="description" rows="5" tabindex="4"></textarea>
+            <input type="submit" value="コメント送信" tabindex="5" onclick="javascript:setval();">
+            <input id="set_cookie" name="set_cookie" type="checkbox" value="1"><label for="set_cookie">名前など入力情報を保存する</label>
+            <input name="entry_id" type="hidden" value="{entry_id}">
+          </form>
+        </section>
+      <!-- END comment_area -->
+      
+      <!-- BEGIN trackback_area -->
+        <section id="trackbacks">
+          <h3>トラックバック</h3>
+          
+          <!-- BEGIN trackback -->
+            <section class="trackback">
+              {trackback_title}
+              {trackback_excerpt}
+              {trackback_blog_name}
+              {trackback_time}
+            </section>
+          <!-- END trackback -->
+          
+          <h4>トラックバック URL</h4>
+          <input type="text" value="{trackback_url}">
+        </section>
+      <!-- END trackback_area -->
+      
+      <!-- BEGIN profile_area -->
+        <section class="entry">
+          <h2 class="title">
+            {profile_name}ja
+          </h2>
+          <div>
+            {profile_description}
+          </div>
+        </section>
+      <!-- END profile_area -->
+      
+    </div>
     <div id="widgets">
+      
       <!-- BEGIN calendar -->
         <div class="widget widget-calendar">
           {calendar}
@@ -252,8 +260,13 @@
         <input type="submit" value="検索">
       </form>
       
-      {site_qrcode}
-      {powered}
+      <div class="widget widget-site-qrcode">
+        {site_qrcode}
+      </div>
+      
+      <div class="widget widget-powered">
+        {powered}
+      </div>
     
     </div>
     <footer id="footer">
